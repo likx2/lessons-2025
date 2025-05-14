@@ -1,0 +1,97 @@
+:root {
+    ---primary-color: #3a86ff;
+    --spacing-0-5: 0.5rem;
+    --spacing-1: 1rem;
+    --spacing-1-5: 1.5rem;
+    --spacing-2: 2rem;
+    --spacing-3: 3rem;
+    --spacing-4: 4rem;
+    --container-spacing: 2rem;
+}
+
+/* reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* common typography styles */
+body {
+    font-family: "Lato", sans-serif;
+    font-size: 1rem;
+}
+
+.section-container {
+    padding: 0 var(--container-spacing);
+}
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: var(---primary-color);
+    padding: 0 var(--spacing-1-5);
+    height: var(--spacing-4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    gap: var(--spacing-2);
+}
+
+.nav-link {
+    position: relative;
+    color: white;
+    text-decoration: none;
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        background-color: white;
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    &:hover::after{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.main {
+    margin-top: var(--spacing-4);
+}
+
+.hero-section {
+    display: flex;
+    gap: var(--spacing-2);
+    justify-content: space-between;
+    align-items: center;
+    height: 500px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-img-container {
+    flex: 1;
+    height: 100%;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
